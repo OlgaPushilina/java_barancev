@@ -4,9 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 
@@ -14,7 +12,7 @@ public class ContactModificationTests extends TestBase {
 
   @Test (enabled = false)
   public void testContactModification() throws InterruptedException {
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData(
               "Olga", "Test", "Tester", "QA", "100 Main Street San Francisco, CA", "516-29-08", "test1"));
@@ -26,7 +24,7 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().fillContactCreation(contact, false);
     app.getContactHelper().submitContactModification();
     app.getContactHelper().returnToHomePage();
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size());
 
