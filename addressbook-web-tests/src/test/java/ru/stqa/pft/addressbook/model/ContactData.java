@@ -44,6 +44,14 @@ public class ContactData {
     return group;
   }
 
+  public String getMobilephone() {
+    return mobilephone;
+  }
+
+  public String getWorkphone() {
+    return workphone;
+  }
+
   public ContactData withId(int id) {
     this.id = id;
     return this;
