@@ -56,8 +56,33 @@ public class ContactHelper extends HelperBase {
     acceptAlert();
   }
 
+  public ContactData infoFromEditForm(ContactData contact) {
+    initContactModificationById(contact.getId());
+    String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+    String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String company = wd.findElement(By.name("company")).getAttribute("value");
+    String title = wd.findElement(By.name("title")).getAttribute("value");
+    String address = wd.findElement(By.name("address")).getText();
+    String homephone = wd.findElement(By.name("home")).getAttribute("value");
+    String mobilephone = wd.findElement(By.name("mobile")).getAttribute("value");
+    String workphone = wd.findElement(By.name("work")).getAttribute("value");
+    wd.navigate().back();
+    return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
+            .withCompany(company).withTitle(title).withAddress(address).withHomephone(homephone)
+            .withMobilephone(mobilephone).withWorkphone(workphone);
+  }
+
   public void initContactModificationById(int id) {
-    wd.findElement(By.xpath(".//a[@href='edit.php?id=" + id + "']")).click();
+    //wd.findElement(By.xpath(".//a[@href='edit.php?id=" + id + "']")).click();
+    //wd.findElement(By.xpath(String.format(".//a[@href='edit.php?id=%s']", id))).click();
+    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
+    //wd.findElement(By.xpath(String.format("//input[@value='%s']/../../td[8]/a", id))).click();
+    //wd.findElement(By.xpath(String.format(".//tr[.//input[@value='%s']]/td[8]/a", id))).click();
+
+    /*WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']", id)));
+    WebElement row = checkbox.findElement(By.xpath("./../.."));
+    List<WebElement> cells = row.findElements(By.tagName("td"));
+    cells.get(7).findElement(By.tagName("a")).click();*/
   }
 
   public void submitContactModification() {
@@ -103,4 +128,5 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
+
 }
