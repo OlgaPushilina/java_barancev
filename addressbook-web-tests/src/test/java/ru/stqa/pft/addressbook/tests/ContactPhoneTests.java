@@ -22,8 +22,8 @@ public class ContactPhoneTests extends TestBase {
     app.goTo().homePage();
     if (app.contact().all().size() == 0) {
       app.contact().create(new ContactData()
-              .withFirstname("Olga").withLastname("Test1").withTitle("Tester").withCompany("QA")
-              .withAddress("100 Main Street San Francisco, CA").withHomephone("516-29-08").withGroup("test1")
+              .withFirstname("Olga").withLastname("Test1")
+              .withAddress("100 Main Street San Francisco, CA").withHomephone("516-29-08").withGroup("[none]")
               .withMobilephone("+7 888").withWorkphone("(650)11790)").withEmail("olga@test.com")
               .withEmail2("olga1@test.com").withEmail3("olga2@test.com"));
     }

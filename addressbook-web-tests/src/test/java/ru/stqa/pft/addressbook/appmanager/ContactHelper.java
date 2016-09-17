@@ -81,6 +81,13 @@ public class ContactHelper extends HelperBase {
             .withEmail3(email3);
   }
 
+  public ContactData infoFromDetailsForm(ContactData contact) {
+    wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", contact.getId()))).click();
+    String details = wd.findElement(By.id("content")).getText();
+    wd.navigate().back();
+    return new ContactData().withDetails(details);
+  }
+
   public void initContactModificationById(int id) {
     //wd.findElement(By.xpath(".//a[@href='edit.php?id=" + id + "']")).click();
     //wd.findElement(By.xpath(String.format(".//a[@href='edit.php?id=%s']", id))).click();
