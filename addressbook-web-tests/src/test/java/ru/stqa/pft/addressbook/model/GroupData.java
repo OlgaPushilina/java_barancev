@@ -1,7 +1,11 @@
 package ru.stqa.pft.addressbook.model;
 
-public class GroupData {
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
+@XStreamAlias("group")
+public class GroupData {
+  @XStreamOmitField
   private int id = Integer.MAX_VALUE;
   private String name;
   private String header;
@@ -38,20 +42,25 @@ public class GroupData {
     return footer;
   }
 
-  public int getId() { return id; }
+  public int getId() {
+    return id;
+  }
 
   public GroupData withId(int id) {
     this.id = id;
     return this;
   }
+
   public GroupData withName(String name) {
     this.name = name;
     return this;
   }
+
   public GroupData withHeader(String header) {
     this.header = header;
     return this;
   }
+
   public GroupData withFooter(String footer) {
     this.footer = footer;
     return this;
