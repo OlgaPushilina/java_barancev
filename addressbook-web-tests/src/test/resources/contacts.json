@@ -1,0 +1,41 @@
+[
+  {
+    "firstname": "Olga 0",
+    "lastname": "Test 0",
+    "address": "100 Main Street San Francisco, CA",
+    "homephone": "516-29-08",
+    "group": "[none]",
+    "mobilephone": "+7 888",
+    "workphone": "(650)11790",
+    "email": "olga@test.com",
+    "email2": "olga1@test.com",
+    "email3": "olga2@test.com",
+    "photo": {}
+  },
+  {
+    "firstname": "Olga 1",
+    "lastname": "Test 1",
+    "address": "100 Main Street San Francisco, CA",
+    "homephone": "516-29-08",
+    "group": "[none]",
+    "mobilephone": "+7 888",
+    "workphone": "(650)11790",
+    "email": "olga@test.com",
+    "email2": "olga1@test.com",
+    "email3": "olga2@test.com",
+    "photo": {}
+  },
+  {
+    "firstname": "Olga 2",
+    "lastname": "Test 2",
+    "address": "100 Main Street San Francisco, CA",
+    "homephone": "516-29-08",
+    "group": "[none]",
+    "mobilephone": "+7 888",
+    "workphone": "(650)11790",
+    "email": "olga@test.com",
+    "email2": "olga1@test.com",
+    "email3": "olga2@test.com",
+    "photo": {}
+  }
+]
