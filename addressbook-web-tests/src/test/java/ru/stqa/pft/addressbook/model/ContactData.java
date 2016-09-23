@@ -14,7 +14,9 @@ public class ContactData {
   private String firstname;
   @Expose
   private String lastname;
+  @Expose
   private String title;
+  @Expose
   private String company;
   @Expose
   private String address;

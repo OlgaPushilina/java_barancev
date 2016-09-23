@@ -63,18 +63,18 @@ public class ContactDataGenerator {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation()
             .registerTypeAdapter(File.class, new FileSerializer()).create();
     String json = gson.toJson(contacts);
-    Writer writer = new FileWriter(file);
-    writer.write(json);
-    writer.close();
+    try (Writer writer = new FileWriter(file)) {
+      writer.write(json);
+    }
   }
 
   private void saveAsXml(List<ContactData> contacts, File file) throws IOException {
     XStream xstream = new XStream();
     xstream.processAnnotations(ContactData.class);
     String xml = xstream.toXML(contacts);
-    Writer writer = new FileWriter(file);
-    writer.write(xml);
-    writer.close();
+    try (Writer writer = new FileWriter(file)) {
+      writer.write(xml);
+    }
   }
 
   private List<ContactData> generateContacts(int count) {
@@ -82,9 +82,10 @@ public class ContactDataGenerator {
     File photo = new File("src/test/resources/Cat.jpg");
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData().withFirstname(String.format("Olga%s", i)).withLastname(String.format("Test%s", i))
-              .withAddress("100 Main Street San Francisco, CA").withHomephone("516-29-08").withGroup("[none]")
-              .withMobilephone("+7 888").withWorkphone("(650)11790").withEmail("olga@test.com")
-              .withEmail2("olga1@test.com").withEmail3("olga2@test.com").withPhoto(photo));
+              .withTitle("Tester").withCompany("QA").withAddress("100 Main Street San Francisco, CA")
+              .withHomephone("516-29-08").withMobilephone("+7 888").withWorkphone("(650)11790")
+              .withEmail("olga@test.com").withEmail2("olga1@test.com").withEmail3("olga2@test.com")
+              .withGroup("[none]").withPhoto(photo));
     }
     return contacts;
   }

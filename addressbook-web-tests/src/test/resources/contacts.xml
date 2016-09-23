@@ -2,6 +2,8 @@
   <contact>
     <firstname>Olga0</firstname>
     <lastname>Test0</lastname>
+    <title>Tester</title>
+    <company>QA</company>
     <address>100 Main Street San Francisco, CA</address>
     <homephone>516-29-08</homephone>
     <group>[none]</group>
@@ -15,6 +17,8 @@
   <contact>
     <firstname>Olga1</firstname>
     <lastname>Test1</lastname>
+    <title>Tester</title>
+    <company>QA</company>
     <address>100 Main Street San Francisco, CA</address>
     <homephone>516-29-08</homephone>
     <group>[none]</group>
@@ -28,6 +32,8 @@
   <contact>
     <firstname>Olga2</firstname>
     <lastname>Test2</lastname>
+    <title>Tester</title>
+    <company>QA</company>
     <address>100 Main Street San Francisco, CA</address>
     <homephone>516-29-08</homephone>
     <group>[none]</group>
