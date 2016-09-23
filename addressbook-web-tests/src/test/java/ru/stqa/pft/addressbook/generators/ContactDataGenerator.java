@@ -3,8 +3,7 @@ package ru.stqa.pft.addressbook.generators;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 import com.thoughtworks.xstream.XStream;
 import ru.stqa.pft.addressbook.model.ContactData;
 
@@ -12,6 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +51,17 @@ public class ContactDataGenerator {
 
   }
 
+  private class FileSerializer implements JsonSerializer <File> {
+
+    @Override
+    public JsonElement serialize(File src, Type typeOfSrc, JsonSerializationContext context) {
+      return new JsonPrimitive(src.getPath());
+    }
+  }
+
   private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
-    Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+    Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation()
+            .registerTypeAdapter(File.class, new FileSerializer()).create();
     String json = gson.toJson(contacts);
     Writer writer = new FileWriter(file);
     writer.write(json);
@@ -72,7 +81,7 @@ public class ContactDataGenerator {
     List<ContactData> contacts = new ArrayList<ContactData>();
     File photo = new File("src/test/resources/Cat.jpg");
     for (int i = 0; i < count; i++) {
-      contacts.add(new ContactData().withFirstname(String.format("Olga %s", i)).withLastname(String.format("Test %s", i))
+      contacts.add(new ContactData().withFirstname(String.format("Olga%s", i)).withLastname(String.format("Test%s", i))
               .withAddress("100 Main Street San Francisco, CA").withHomephone("516-29-08").withGroup("[none]")
               .withMobilephone("+7 888").withWorkphone("(650)11790").withEmail("olga@test.com")
               .withEmail2("olga1@test.com").withEmail3("olga2@test.com").withPhoto(photo));

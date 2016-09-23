@@ -1,7 +1,7 @@
 [
   {
-    "firstname": "Olga 0",
-    "lastname": "Test 0",
+    "firstname": "Olga0",
+    "lastname": "Test0",
     "address": "100 Main Street San Francisco, CA",
     "homephone": "516-29-08",
     "group": "[none]",
@@ -10,11 +10,11 @@
     "email": "olga@test.com",
     "email2": "olga1@test.com",
     "email3": "olga2@test.com",
-    "photo": {}
+    "photo": "src\\test\\resources\\Cat.jpg"
   },
   {
-    "firstname": "Olga 1",
-    "lastname": "Test 1",
+    "firstname": "Olga1",
+    "lastname": "Test1",
     "address": "100 Main Street San Francisco, CA",
     "homephone": "516-29-08",
     "group": "[none]",
@@ -23,11 +23,11 @@
     "email": "olga@test.com",
     "email2": "olga1@test.com",
     "email3": "olga2@test.com",
-    "photo": {}
+    "photo": "src\\test\\resources\\Cat.jpg"
   },
   {
-    "firstname": "Olga 2",
-    "lastname": "Test 2",
+    "firstname": "Olga2",
+    "lastname": "Test2",
     "address": "100 Main Street San Francisco, CA",
     "homephone": "516-29-08",
     "group": "[none]",
@@ -36,6 +36,6 @@
     "email": "olga@test.com",
     "email2": "olga1@test.com",
     "email3": "olga2@test.com",
-    "photo": {}
+    "photo": "src\\test\\resources\\Cat.jpg"
   }
 ]
