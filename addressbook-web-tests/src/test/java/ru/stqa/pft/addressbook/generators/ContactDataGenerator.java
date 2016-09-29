@@ -82,7 +82,7 @@ public class ContactDataGenerator {
     File photo = new File("src/test/resources/Cat.jpg");
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData().withFirstname(String.format("Olga%s", i)).withLastname(String.format("Test%s", i))
-              .withTitle("Tester").withCompany("QA").withAddress("100 Main Street San Francisco, CA")
+              .withAddress("100 Main Street San Francisco, CA")
               .withHomephone("516-29-08").withMobilephone("+7 888").withWorkphone("(650)11790")
               .withEmail("olga@test.com").withEmail2("olga1@test.com").withEmail3("olga2@test.com")
               .withGroup("[none]").withPhoto(photo));

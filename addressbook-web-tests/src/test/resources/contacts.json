@@ -2,8 +2,6 @@
   {
     "firstname": "Olga0",
     "lastname": "Test0",
-    "title": "Tester",
-    "company": "QA",
     "address": "100 Main Street San Francisco, CA",
     "homephone": "516-29-08",
     "group": "[none]",
@@ -17,8 +15,6 @@
   {
     "firstname": "Olga1",
     "lastname": "Test1",
-    "title": "Tester",
-    "company": "QA",
     "address": "100 Main Street San Francisco, CA",
     "homephone": "516-29-08",
     "group": "[none]",
@@ -32,8 +28,6 @@
   {
     "firstname": "Olga2",
     "lastname": "Test2",
-    "title": "Tester",
-    "company": "QA",
     "address": "100 Main Street San Francisco, CA",
     "homephone": "516-29-08",
     "group": "[none]",
