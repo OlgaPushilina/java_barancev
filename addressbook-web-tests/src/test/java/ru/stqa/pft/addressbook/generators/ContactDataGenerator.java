@@ -85,7 +85,7 @@ public class ContactDataGenerator {
               .withAddress("100 Main Street San Francisco, CA")
               .withHomephone("516-29-08").withMobilephone("+7 888").withWorkphone("(650)11790")
               .withEmail("olga@test.com").withEmail2("olga1@test.com").withEmail3("olga2@test.com")
-              .withGroup("[none]").withPhoto(photo));
+              .withPhoto(photo));
     }
     return contacts;
   }

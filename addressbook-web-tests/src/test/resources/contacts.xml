@@ -2,46 +2,40 @@
   <contact>
     <firstname>Olga0</firstname>
     <lastname>Test0</lastname>
-    <title>Tester</title>
-    <company>QA</company>
     <address>100 Main Street San Francisco, CA</address>
     <homephone>516-29-08</homephone>
-    <group>[none]</group>
     <mobilephone>+7 888</mobilephone>
     <workphone>(650)11790</workphone>
     <email>olga@test.com</email>
     <email2>olga1@test.com</email2>
     <email3>olga2@test.com</email3>
     <photo>src\test\resources\Cat.jpg</photo>
+    <groups/>
   </contact>
   <contact>
     <firstname>Olga1</firstname>
     <lastname>Test1</lastname>
-    <title>Tester</title>
-    <company>QA</company>
     <address>100 Main Street San Francisco, CA</address>
     <homephone>516-29-08</homephone>
-    <group>[none]</group>
     <mobilephone>+7 888</mobilephone>
     <workphone>(650)11790</workphone>
     <email>olga@test.com</email>
     <email2>olga1@test.com</email2>
     <email3>olga2@test.com</email3>
     <photo>src\test\resources\Cat.jpg</photo>
+    <groups/>
   </contact>
   <contact>
     <firstname>Olga2</firstname>
     <lastname>Test2</lastname>
-    <title>Tester</title>
-    <company>QA</company>
     <address>100 Main Street San Francisco, CA</address>
     <homephone>516-29-08</homephone>
-    <group>[none]</group>
     <mobilephone>+7 888</mobilephone>
     <workphone>(650)11790</workphone>
     <email>olga@test.com</email>
     <email2>olga1@test.com</email2>
     <email3>olga2@test.com</email3>
     <photo>src\test\resources\Cat.jpg</photo>
+    <groups/>
   </contact>
 </list>
