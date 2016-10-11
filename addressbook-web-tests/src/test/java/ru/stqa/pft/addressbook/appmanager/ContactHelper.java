@@ -56,6 +56,15 @@ public class ContactHelper extends HelperBase {
     click(By.cssSelector(".right>input"));
   }
 
+  public void selectGroupContactsPage(GroupData group) {
+    new Select(wd.findElement(By.name("group"))).selectByVisibleText(group.getName());
+  }
+
+  public void removeFromGroup() {
+    wd.findElement(By.name("remove")).click();
+
+  }
+
   public void submitContactCreation() {
     click(By.name("submit"));
   }
@@ -160,5 +169,4 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
-
 }
