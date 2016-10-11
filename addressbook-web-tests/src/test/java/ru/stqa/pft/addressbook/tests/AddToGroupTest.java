@@ -38,14 +38,19 @@ public class AddToGroupTest extends TestBase {
     Groups allGroups = app.db().groups();
     ContactData contact = allContacts.iterator().next();
     GroupData group = allGroups.iterator().next();
+    if (group.getContacts().contains(contact)) {
+      app.contact().selectGroupContactsPage(group);
+      app.contact().selectContactById(contact.getId());
+      app.contact().removeFromGroup();
+      app.goTo().homePage();
+      app.contact().returnToAllContactsPage();
+      Groups groups = updatedContacts(contact);
+      Assert.assertFalse(groups.contains(group));
+    }
     app.contact().selectContactById(contact.getId());
     app.contact().addToGroup(group);
 
-    Contacts newContacts = app.db().contacts();
-    Set<ContactData> updatedContacts = newContacts.stream()
-            .filter(c -> c.getId() == contact.getId())
-            .collect(Collectors.toSet());
-    Groups groups = updatedContacts.iterator().next().getGroups();
+    Groups groups = updatedContacts(contact);
     Assert.assertTrue(groups.contains(group));
 
     /*for (ContactData newContact : newContacts) {
@@ -55,4 +60,13 @@ public class AddToGroupTest extends TestBase {
       }
     }*/
   }
+
+  private Groups updatedContacts(ContactData contact) {
+    Contacts newContacts = app.db().contacts();
+    Set<ContactData> updatedContacts = newContacts.stream()
+            .filter(c -> c.getId() == contact.getId())
+            .collect(Collectors.toSet());
+    return updatedContacts.iterator().next().getGroups();
+  }
 }
+

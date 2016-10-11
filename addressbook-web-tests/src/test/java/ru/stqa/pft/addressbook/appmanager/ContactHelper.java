@@ -62,7 +62,10 @@ public class ContactHelper extends HelperBase {
 
   public void removeFromGroup() {
     wd.findElement(By.name("remove")).click();
+  }
 
+  public void returnToAllContactsPage() {
+    new Select(wd.findElement(By.name("group"))).selectByValue("");
   }
 
   public void submitContactCreation() {
