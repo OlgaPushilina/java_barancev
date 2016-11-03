@@ -135,7 +135,11 @@ public class ContactData {
   }
 
   public File getPhoto() {
-    return new File (photo);
+    if (photo == null || photo.equals("")) {
+      return null;
+    } else {
+      return new File(photo);
+    }
   }
 
   public Groups getGroups() {
