@@ -3,7 +3,6 @@ package ru.stqa.pft.mantis.tests;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.internal.Yaml;
 import ru.stqa.pft.mantis.model.MailMessage;
 import ru.stqa.pft.mantis.model.Users;
 
@@ -33,9 +32,10 @@ public class PasswordChangeTests extends TestBase {
     assertTrue(app.navigate().isLoggedInAs(username));
     app.navigate().manageUsers();
     List<Users> allUsers = app.db().users();
-    Set<Users> usersWhoIsNotAdmin = allUsers.stream().filter(u -> !u.getName().equals("administrator"))
+    Set<Users> usersWhoAreNotAdmin = allUsers.stream()
+            .filter(u -> !u.getName().equals("administrator"))
             .collect(Collectors.toSet());
-    Users user = usersWhoIsNotAdmin.iterator().next();
+    Users user = usersWhoAreNotAdmin.iterator().next();
     app.navigate().chooseUser(user);
     app.navigate().resetPassword();
     List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
