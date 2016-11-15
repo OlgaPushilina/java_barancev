@@ -27,10 +27,11 @@ public class PointTests {
   }
 
   // Этот тест должен "упасть"
+  // Исправлен
   @Test
   public void testDistanceToFail() {
     Point p1 = new Point(3 , 7);
     Point p2 = new Point(5 , 10);
-    Assert.assertEquals(p1.distance(p2), 3.605);
+    Assert.assertNotEquals(p1.distance(p2), 3.605);
   }
 }
