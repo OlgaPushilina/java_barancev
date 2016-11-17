@@ -35,7 +35,7 @@ public class RemoveFromGroupTest extends TestBase {
   }
 
   @Test
-  public void testRemoveFromGroup() {
+  public void testRemoveFromGroup() throws InterruptedException {
     Groups allGroups = app.db().groups();
     GroupData group = allGroups.iterator().next();
     ContactData contactToRemove = ensureGroupContainsContacts(group);
@@ -43,6 +43,7 @@ public class RemoveFromGroupTest extends TestBase {
     app.contact().selectGroupContactsPage(group);
     app.contact().selectContactById(contactToRemove.getId());
     app.contact().removeFromGroup();
+    Thread.sleep(5000);
     Contacts contacts = updatedGroups(group);
     Assert.assertFalse(contacts.contains(contactToRemove));
   }

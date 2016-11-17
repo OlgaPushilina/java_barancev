@@ -55,12 +55,12 @@ public class ContactHelper extends HelperBase {
   }
 
   public void addToGroup(GroupData group) {
-    new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(group.getName());
+    new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(group.getId()));
     click(By.cssSelector(".right>input"));
   }
 
   public void selectGroupContactsPage(GroupData group) {
-    new Select(wd.findElement(By.name("group"))).selectByVisibleText(group.getName());
+    new Select(wd.findElement(By.name("group"))).selectByValue(String.valueOf(group.getId()));
   }
 
   public void removeFromGroup() {
